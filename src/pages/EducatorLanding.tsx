@@ -1,14 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { GiTeacher } from 'react-icons/gi'
-import { HiIdentification } from 'react-icons/hi'
+import { auth,provider } from '../services/Firebase'
+import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
+
+import { BsGoogle } from 'react-icons/bs'
+import { AiFillFacebook } from 'react-icons/ai'
+
+import '../style/pages/EducatorLanding.scss'
 
 import BackgroundEducator from '../assets/images/backgroundEdcatorLanding.png'
 import Logo from '../assets/images/Logo.png'
 
 export function EducatorLanding() {
     const navigate = useNavigate()
+
+    const handleNavigateToRegisterEducator = () => {
+        navigate('/educators/new/register')
+    }
+
+    var userGoogle;
 
     return(
         <div id="EducatorLanding">
@@ -26,9 +37,16 @@ export function EducatorLanding() {
                         </div>     
                     </div>
                     <div className="login-content">
-                        <button>Já sou um Educador</button>
-                        <p className='separatoe'>Ou entrar como</p>
-                        <button>Quero me tornar um Educador</button>
+                        <h2>Entra usando uma conta</h2>
+                        <div className="buttons-content">
+                            <button
+                                className='button-google'
+                            ><span><BsGoogle/></span> <p>Entrar usando uma conta Google</p></button>
+                            <button className='button-facebook'><span><AiFillFacebook/></span><p>Entrar usando uma conta Facebook</p></button>
+                        </div>
+                    </div>
+                    <div className="sign-in-educator">
+                        <a href='/educators/new/register'>Se cadastrar como um Educador</a>
                     </div>
                 </div>
             </main>

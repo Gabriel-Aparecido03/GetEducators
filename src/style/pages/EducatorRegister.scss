@@ -1,0 +1,279 @@
+#EducatorRegister {
+    justify-content: center;
+}
+
+header {
+    position: fixed;
+    background-color: #80F3FF;
+    width: 100%;
+    top: 0;
+}
+
+main {
+    width: 50%;
+
+    position: relative;
+    
+    background-color: #fff;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 2rem;
+    
+    .form-content {
+        color: #000;
+        margin-top: 9%;
+        background-color: #fff;
+        
+        border: 1px #a1a1a1 solid;
+        border-radius: 2rem;
+
+        margin-bottom: 5rem;
+
+        padding-bottom: 3rem;
+
+        .introduction-content {
+            color: #696969a1;
+            strong {
+                color: #CB008B;
+            }
+            margin-top: 5rem;
+            border-bottom: 1px solid #a1a1a1;
+
+            h1 {
+                margin: 4rem;
+                font-weight: 900;
+            }
+
+            p {
+                margin-bottom: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.get-informations-educator {
+    display: flex;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    button {
+        width: 35%;
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+        padding: .6rem;
+
+        display: flex;
+        
+        border: none;
+        border-radius: .5rem;
+
+        color: #fff;
+        
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .button-facebook {
+        background-color: #3b5998;
+    }
+
+    .button-google {
+        background-color: #f65314;
+    }
+}
+
+
+.input-informations {
+    display: inline-block;
+    width: 100%;
+    
+    .input-normal {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        padding-top: 1.3rem;
+
+        margin-top: .7rem;
+
+        text-align: initial;
+        label,.title-social {
+            display: block;
+            font-weight: 700;
+            font-size: .97rem;
+        }
+
+        .title-social {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        input {
+            width: 100%;
+            
+            margin-top: .3rem;
+
+            border-radius: .4rem;
+            
+            padding: .9rem;
+            
+            border-style: solid;
+            border-width: .12rem;
+            border-color: #cecece;
+
+            font-size: 1rem;
+        }
+
+        select {
+            border: none;
+            width: 100%;
+
+            padding: .9rem;
+            border-radius: .4rem;
+            
+            margin-top: .3rem;
+        }
+
+        textarea {
+            width: 100%;
+            
+            border-radius: .4rem;
+            border: .1rem solid #cecece;
+            
+            resize: none;
+
+            padding: .5rem;
+        }
+
+        textarea::placeholder {
+            color: #a1a1a1;
+        }
+
+    }
+
+    #separator-time {
+        text-align: center;
+        font-weight: 700;
+        margin: .4rem;
+    }
+
+    .options {
+        display: grid;
+        gap: 1.4rem;
+
+        input {
+            border: none;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .day-selected {
+            background-color: #15ff00;
+            color: #fff;
+        }
+
+        .day-unselected {
+            background-color: #797979;
+            color: #000;
+        }
+
+
+        .day-unselected:hover {
+            background-color: #353535;
+            cursor: pointer;
+        }
+
+        .day-selected:hover {
+            background-color: #0c9100;
+            cursor: pointer;
+        }
+
+    }
+
+    .chosed-type {
+        display: flex;
+
+        text-align: center;
+        justify-content: center;
+
+        div {
+            display: grid; 
+            grid-template-columns: auto auto auto;
+            text-align: center;
+            justify-content: center;
+
+            margin-left: 2rem;
+
+            label {
+                font-size: 1rem;
+                margin-top: .5rem;
+                margin-left: .5rem;
+            }
+
+            input {
+                height: 100%;
+            }
+        }
+
+    }
+}
+
+.social-medias {
+    div {
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+}
+
+.instagram-field {
+    color: #8139af;
+}
+
+.facebook-field {
+    color: #3b5998;
+}
+
+.whatsapp-field {
+    color: #25d366;
+}
+
+.linkedin-field {
+    color: #0376a8;
+}
+
+.email-field {
+    color: #f65314;
+}
+
+.youtube-field {
+    color:#c4302b;
+}
+
+.twitter-field {
+    color:#00acee;
+}
+
+.submit-button {
+    margin-top: .5rem;
+
+    padding: .6rem;
+
+    border-radius: .4rem;
+    border: .1rem solid #cecece;
+
+    background-color: #4fff5d;
+
+    color: #fff;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.submit-button:hover {
+    background-color:#09ad16 ;
+    cursor: pointer;
+}

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { GiTeacher } from 'react-icons/gi'
 import { BsBook } from 'react-icons/bs'
 
+import '../style/pages/Home.scss'
+
 import Logo from '../assets/images/Logo.png'
 import BackgroundHome from '../assets/images/LandingBackground.png'
 
@@ -25,23 +27,23 @@ export function Home() {
                 <div className="images-home-content">
                     <img src={BackgroundHome} alt="imagem de estudantes estudando" />
                 </div>
-                <div className="write-home-content">
-                    <h2>Ache o Educator perfeito para você.</h2>
-                </div>
             </aside>
             <main>
                 <div className="principal-home-content">
                     <div className="logo-home-content">
                         <img src={Logo} alt="imagem do GetEducators" />
                     </div>
+                    <div className="intro-content">
+                        <h2>Ache o Educator perfeito para você.</h2>
+                    </div>
                     <div className="buttons-home-content">
                         <button 
                             onClick={handleEducatorsPage}>
-                            <p>Entrar com Educador</p><span><GiTeacher/></span></button>
-                            <p className='separatoe'>Ou entrar como</p>
+                            <span><GiTeacher/></span><p>Entrar com Educador</p></button>
+                            <p className='separator'>Ou entrar como</p>
                         <button 
                             onClick={handleClientPage}
-                        ><p>Ter aula com um Educador</p><span><BsBook/></span></button>
+                        ><span><BsBook/></span><p>Ter aula com um Educador</p></button>
                     </div>
                 </div>
             </main>

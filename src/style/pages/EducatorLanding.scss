@@ -1,0 +1,104 @@
+#EducatorLanding {
+    display: flex;
+}
+
+aside {
+    width: 50%;
+    img {
+        max-width: 55rem;
+    }
+}
+
+main {
+
+    .logo-content {
+        margin-bottom: 15%;
+    }
+
+    color: #fff;
+
+    .write-content {
+        font-size: 1.4rem;
+        font-weight: 900;
+    }
+
+    .login-content {
+       font-size: .9rem;
+    }
+
+    .buttons-content {
+        display: grid;
+        width: 80%;
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        button {
+
+            display: flex;
+            text-align: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: .5rem;
+            
+            padding: .5rem;
+            
+            color: #fff;
+            
+            font-weight: 700;
+            font-size: .95rem;
+            
+            margin-bottom: .5rem;
+
+            p {
+                padding-left: .4rem;
+            }
+        }
+
+        .button-facebook {
+            background-color: #3b5998;
+        }
+
+        .button-google {
+            background-color: #ea4335;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .button-facebook:hover {
+            background-color: #2a3d68;
+            transition: .5s;
+        }
+
+        .button-google:hover {
+            background-color: #833110;
+            transition: .5s;
+        }
+    }
+
+    .sign-in-educator {
+        position: absolute;
+        
+        text-align: center;
+        justify-content: center;
+        
+        bottom: 1%;
+        right:8%;
+        
+        font-size: .9rem;
+        font-weight: 700;
+        text-decoration: underline;
+
+        a:hover {
+            color: #000;
+            transition: .8s;
+            cursor: pointer;
+        }
+    }
+
+
+}
