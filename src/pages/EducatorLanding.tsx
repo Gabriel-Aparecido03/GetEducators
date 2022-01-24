@@ -1,8 +1,7 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { auth,provider } from '../services/Firebase'
-import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
+import { useAuth } from '../hooks/useAuth'
 
 import { BsGoogle } from 'react-icons/bs'
 import { AiFillFacebook } from 'react-icons/ai'
@@ -13,13 +12,25 @@ import BackgroundEducator from '../assets/images/backgroundEdcatorLanding.png'
 import Logo from '../assets/images/Logo.png'
 
 export function EducatorLanding() {
+    
+    const {signInWithGoogle} = useAuth()
+    const {signInWithFacebook} = useAuth()
+
+    const {user} = useAuth()
+
     const navigate = useNavigate()
 
     const handleNavigateToRegisterEducator = () => {
         navigate('/educators/new/register')
     }
 
-    var userGoogle;
+    const handleUsingGoogle = () =>{
+        signInWithGoogle()
+    }
+
+    const handleUsingFacebook = () =>{
+        signInWithFacebook()
+    }
 
     return(
         <div id="EducatorLanding">
@@ -41,12 +52,12 @@ export function EducatorLanding() {
                         <div className="buttons-content">
                             <button
                                 className='button-google'
+                                onClick={handleUsingGoogle}
                             ><span><BsGoogle/></span> <p>Entrar usando uma conta Google</p></button>
-                            <button className='button-facebook'><span><AiFillFacebook/></span><p>Entrar usando uma conta Facebook</p></button>
+                            <button 
+                                onClick={handleUsingFacebook}
+                                className='button-facebook'><span><AiFillFacebook/></span><p>Entrar usando uma conta Facebook</p></button>
                         </div>
-                    </div>
-                    <div className="sign-in-educator">
-                        <a href='/educators/new/register'>Se cadastrar como um Educador</a>
                     </div>
                 </div>
             </main>
