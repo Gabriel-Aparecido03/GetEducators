@@ -47,7 +47,7 @@ type AuthContextType = {
 
 export const AuthContext = createContext({} as AuthContextType)
 export function AuthContextProvider(props: AuthContextProviderProps) {
-
+    
     const navigate = useNavigate()
     const [user,setUser] = useState<UserLoginGoogle>()
     const [finalUser,setFinalUser] = useState<any>()

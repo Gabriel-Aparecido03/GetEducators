@@ -1,8 +1,16 @@
-header {
-    position: fixed;
-    width: 100%;
+#Educator-Register {
+    display: flex;
+}
 
-    background-color: #16C79A;
+
+
+header {
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    overflow: hidden;
+
+    background-color: #24A19C;
 
     display: inline;
 
@@ -10,7 +18,9 @@ header {
         display: flex;
         justify-content: space-between;
 
-        margin: 1.8rem;
+        margin-top: 1.8rem;
+        margin-left: 1.8rem;
+        margin-right: 1.8rem;
         
         a {
             color: #fff;
@@ -22,5 +32,240 @@ header {
             color: #949494;
             transition: .4s;
         }
+    }
+
+    .motivation {
+        display: block;
+        text-align: initial;
+
+        color: #fff;
+
+        margin-right: 90%;
+        margin-left: 10%;
+
+        width: 60%;
+
+        margin-bottom: 5%;
+        
+        h1 {
+            padding-bottom: .6rem;
+            font-weight: 900;
+            font-size: 2.1rem;
+        }
+
+        strong {
+            color: #D96098;
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        span {
+            color: #fff;
+            font-size: .8rem;
+        }
+    }
+}
+
+.main-register-content {
+    width: 50%;
+    position: absolute;
+
+    height: 100vh;
+
+    top: 40%;
+    left: 25%;
+
+    background: none;
+
+    color: #000000;
+
+    text-align: initial;
+
+    .personal-date {
+        margin-bottom: 1.5rem;
+        h1 {
+            font-size: 1.5rem;
+            padding: 1.2rem;
+            padding-bottom: 0;
+        }
+
+        label {
+            margin-top: 1rem;
+            font-size: .8rem;
+            font-weight: 700;
+            padding-left: 1.2rem;
+        }
+    }
+
+    form {
+        background-color: #fff;
+        border-radius: .5rem;
+        border: .07rem #979797 solid;
+
+        margin-bottom: 3rem;
+    }
+
+    .class-date {
+        h1 {
+            font-size: 1.5rem;
+            padding: 1.2rem;
+            padding-bottom: 0;
+        }
+
+        label {
+            margin-top: 1rem;
+            font-size: .8rem;
+            font-weight: 700;
+            padding-left: 1.2rem;
+        }
+
+        .subject-content {
+            margin-top: 1.2rem;
+
+            display: grid;
+
+            label {
+                font-size:.8rem;
+            }
+
+            select {
+                width: 40%;
+                font-size: 1rem;
+                font-weight: 700;
+                background-color: #fff;
+                border: .05rem solid #6e6e6e;
+                border-radius: .2rem;
+                padding: .6rem;
+                margin-left: 5%;
+            }
+        }
+    }
+
+    .time-date {
+        h1 {
+            font-size: 1.5rem;
+            padding: 1.2rem;
+            padding-bottom: 0;
+        }
+
+        label {
+            font-size: .8rem;
+            font-weight: 700;
+            padding: 1.2rem;
+        }
+
+        .buttons-content {
+            display: flex;
+            justify-content: space-between;
+
+            gap: .4rem;
+
+            button {
+                font-size: .8rem;
+            }
+
+            .day-selected {
+                background-color: #6ECB63;
+                color: #fff;
+            }
+
+            .day-unselected {
+                background-color: #7a7a7a;
+                color: #000;
+            }
+
+            .day-unselected:hover {
+                background-color: #474747;
+                transition: .5s;
+                cursor: pointer;
+            }
+
+            .day-selected:hover {
+                background-color: #509148;
+                cursor: pointer;
+                transition: .5s;
+            }
+        }
+    }
+
+    .time-content {
+        .datetime {
+
+            display: flex;
+
+            span {
+                padding: 1.2rem;
+            }
+
+            input {
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1rem;
+                padding: .5rem;
+    
+                border-radius: .4rem;
+                border: .1rem solid #7a7a7a;
+            }
+        }
+    }
+
+    .informations-content {
+        display: grid;
+
+        input {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1rem;
+            padding: .5rem;
+
+            border-radius: .4rem;
+            border: .1rem solid #7a7a7a;
+        }
+
+        textarea {
+            width: 90%;
+            resize: none;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            border-radius: .4rem;
+            border: .1rem solid #7a7a7a;
+        }
+    }
+
+    .final-form {
+        padding: 1.2rem;
+        display: flex;
+        justify-content: space-around;
+        p {
+            color: #D96098;
+        }
+
+        button {
+            width: 50%;
+
+            font-size: 1rem;
+            padding: .5rem;
+            
+            color: #fff;
+            font-weight: 700;
+
+            background-color: #6ECB63;
+
+            border: none;
+            border-radius: .4rem;
+        }
+
+        button:hover {
+            background-color: #4e9446;
+            cursor:pointer;
+            transition: .5s;
+        }
+
     }
 }
