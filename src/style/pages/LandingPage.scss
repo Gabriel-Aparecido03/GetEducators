@@ -1,0 +1,181 @@
+.introduction-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    .image-content {
+        text-align: center;
+        img {
+            max-width: 60%;
+        }
+    }
+
+    .principal-content {
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        margin-right: 4rem;
+
+        .logo-content {
+            text-align: center;
+            img {
+                width: 40%;
+            }
+        }
+
+        .phrase-content-mobile {
+            display: none;
+        }
+
+        .phrase-content-desktop {
+            margin-top: .8rem;
+            text-align: center;
+            justify-content: center;
+            
+            h2 {
+                font-weight: 700;
+                font-size: 21pt;
+            }
+        }
+    }
+}
+
+.buttons-content {
+    display: flex;
+    justify-content: end;
+    right: 10%;
+    width: 100vw;
+    bottom: 15%;
+
+    position: absolute;
+
+    .student-content {
+        margin-right: 1.3rem;
+        button {
+            background-color: #11999E;  
+            
+            border-radius: .3rem;
+            border: .01rem solid #cecece;
+            
+            padding: 1.4rem;
+            
+            
+            p {
+                font-size: 1rem;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+
+        button:hover {
+            background-color:#0a5255;
+            cursor: pointer;
+            transition: .5s;
+        }
+    }
+
+    .educator-content {
+        
+        button {
+            background-color: #40514E;  
+            
+            border-radius: .3rem;
+            border: .01rem solid #cecece;
+            
+            padding: 1.4rem;
+            
+            
+            p {
+                font-size: 1rem;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+
+        button:hover {
+            background-color: #26302e;
+            cursor:pointer;
+            transition: .5s;
+        }
+    }
+}
+
+@media (max-width:1050px) {
+    #LandingPage {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .introduction-content {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        .image-content {
+            text-align: center;
+            width: 100%;
+            img {
+                width: 1000px;
+            }
+        }
+
+        .logo-content {
+            display: none;
+        }
+
+        .phrase-content-desktop {
+            display: none;
+        }
+
+        .principal-content  {
+            .phrase-content-mobile {
+                display: block;
+                width: 100vw;
+                text-align: center;
+
+                h1 {
+                    font-size: 1.9rem;
+                    font-weight: 400;
+                }
+                p {
+                    font-size: 1.9rem;
+                    font-weight: 700;
+                }
+
+                strong {
+                    color: #11999E;
+                }
+            }
+        }
+    }
+
+
+    .buttons-content {
+        padding: 0;
+        margin: 0;
+
+        left: 3.5%;
+        bottom: 5%;
+
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+
+
+        .student-content,.educator-content {
+            button {
+                font-size: 1.5rem;
+                padding: 2rem;
+                width: 50vw;
+            }
+        }
+    }
+}
+
+
+@media (max-width:550px) {
+    .introduction-content {
+        position: absolute;
+        top: 20%;
+    }
+}
