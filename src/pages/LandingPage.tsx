@@ -1,11 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import '../style/pages/LandingPage.scss'
 
-import Logo from '../assets/images/Logo.png'
-import BackgroundLanding from '../assets/images/backgroundLanding.jpg'
+import Logo from '../assets/images/Logo 1.svg'
+import BackgroundLanding from '../assets/images/backgroundLanding 1.svg'
 
 export function LandingPage() {
+    const navigate = useNavigate()
     return (
         <div id="LandingPage">
             <div className="introduction-content">
@@ -30,7 +32,7 @@ export function LandingPage() {
                     <button><p>Achar um Educador</p></button>
                 </div>
                 <div className="educator-content">
-                    <button><p>Me tornar um Educador</p></button>
+                    <button onClick={()=>{navigate('/educator')}}><p>Me tornar um Educador</p></button>
                 </div>
             </div>
         </div>

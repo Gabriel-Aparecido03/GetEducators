@@ -1,0 +1,92 @@
+#EducatorPage {
+    display: flex;
+    .image-content {
+        width: 100%;
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.login-content {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 5%;
+    .welcome-educator-content {
+        h1 {
+            color: #11999E;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+
+    .login-form-content {
+        margin-top: 35%;
+
+        p{
+            font-size: 1rem;
+        }
+
+        .buttons-login-content {
+            display: grid;
+            justify-content: center;
+            width: 100%;
+
+            button {
+                width: 30vw;
+                padding: .5rem;
+                
+                margin-right: .4rem;
+                margin-top: .4rem;
+
+                border-radius: .4rem;
+                border: 1px solid black;
+
+                background-color: #fff;
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                
+            }
+        }
+    }
+}
+
+
+@media (max-width:1050px) {
+    #EducatorPage {
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+
+    .image-content {
+        margin: 0;
+        text-align: center;
+
+        img {
+            width: 50%;
+        }
+    }
+
+    .login-form-content {
+        margin: 0;
+
+        .welcome-educator-content {
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width:500px) {
+}

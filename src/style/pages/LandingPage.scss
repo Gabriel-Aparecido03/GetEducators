@@ -5,14 +5,13 @@
     .image-content {
         text-align: center;
         img {
-            max-width: 60%;
+            max-width: 100%;
         }
     }
 
     .principal-content {
         display: inline-block;
-        margin-top: auto;
-        margin-bottom: auto;
+        
 
         margin-right: 4rem;
 
@@ -115,7 +114,7 @@
             text-align: center;
             width: 100%;
             img {
-                width: 1000px;
+                width: 60%;
             }
         }
 
@@ -177,5 +176,44 @@
     .introduction-content {
         position: absolute;
         top: 20%;
+
+        .image-content {
+            img {
+                width: 80%;
+            }
+        }
+    }
+    .buttons-content {
+        bottom: 0;
     }
 }
+
+
+@media(max-width:450px) {
+    .introduction-content {
+        margin-left: 1rem;
+        .image-content {
+            img {
+                width: 40%;
+            }
+        }
+
+        .phrase-content-mobile {
+            font-size: .4rem;
+        }
+    }
+
+    .buttons-content {
+        bottom: 0;
+        left: 2rem;
+        .educator-content,.student-content {
+            
+            button {
+                p{
+                    font-size: 1rem;
+                }
+            }
+
+        }
+    }
+} 
