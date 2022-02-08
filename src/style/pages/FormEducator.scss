@@ -2,7 +2,213 @@
     .header-form-content {
         background-color: #11999E;
 
-        height: 25vh;
+        text-align: center;
+
+        height: 30vh;
+
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: #ffff;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ffff;
+        }
+    }
+
+    .header-icons {
+        display: flex;
+        justify-content: space-between;
+        
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+
+    .form-content {
+        border: 1px solid black;
+        border-radius: .4rem;
+        position: absolute;
+
+        width: 60%;
+        left: 20%;
+        top: 25%;
+
+        background-color: #Ffff;
+
+        .informations-block {
+            margin: 2.5%;
+            margin-top: 5%;
+            h1 {
+                font-size: 1.6rem;
+                font-weight: 700;
+
+                border-bottom: .12rem solid black;
+            }
+
+        }
+
+    }
+
+}
+
+.individual-question-content {
+    label {
+        display: flex;
+        margin-top: 1.2rem;
+        margin-bottom: .4rem;
+
+        font-size: 1rem;
+        font-weight: 500;
+        color: #838383;
+    
+    }
+
+    input,select,textarea {
+        font-size: .9rem;
+        font-weight: 700;
+        color: #ffff;
+
+        width: 100%;
+
+        padding: .9rem;
+        
+        border-radius: .4rem;
+        border: .01rem solid #C1BCCC;
+        background-color: #d1d1d1;
+
+    }
+
+    textarea {
+        resize: none;
+        width: 100%;
+        height: 50%;
+    }
+
+    .hours-informations {
+        display: flex;
+        gap: .5rem;
+
+        input {
+            width: 30%;
+            margin-right: .9rem;
+        }
+
+        p {
+            color: #838383;
+        }
+    }
+
+    .days-of-week {
+        button {
+            display: flex;
+
+            color: #ffff;
+            font-size: .9rem;
+            font-weight: 900;
+
+            width: 50%;
+
+            padding: .9rem;
+
+            justify-content: center;
+
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: .5rem;
+
+            border-radius: .4rem;
+            border: none;
+        }
+
+        .unselect-day {
+            background-color: #C1BCCC;
+        }
+
+        .select-day {
+            background-color: #4ea100;
+        }
+
+
+        .unselect-day:hover {
+            background-color: #757575;
+            cursor: pointer;
+
+            transition: .5s;
+        }
+
+        .select-day:hover {
+            background-color: #2b5800;
+            cursor: pointer;
+
+            transition: .5s;
+        }
+
     }
 }
 
+.button-content {
+    background-color: #97c8ca;
+    
+    width: 100%;
+
+    border-bottom-left-radius:.4rem;
+    border-bottom-right-radius:.4rem;
+
+    padding: 1rem;
+    text-align: center;
+
+    button {
+        width: 60%;
+
+        color: #fff;
+        font-weight: 500;
+        padding: .4rem;
+        font-size: .9rem;
+
+        background-color: #40514E;
+
+        border: none;
+        border-radius: .4rem;
+    }
+
+    button:hover {
+        background-color: #181f1d;
+        cursor: pointer;
+
+        transition: .5s;
+    }
+}   
+
+
+@media (max-width:600px) {
+   #FormEducator {
+
+    .form-content {
+
+        position: relative;
+
+        left: 0;
+        width: 100%;
+
+        border-radius: none;
+
+        border: none;
+
+
+        .informations-block {
+            h1 {
+                font-size: 1rem;
+                }
+            }
+        }
+   }
+
+   .individual-question-content {
+       label {
+           font-size: .8rem;
+       }
+   }
+}

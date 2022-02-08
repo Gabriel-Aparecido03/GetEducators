@@ -1,14 +1,17 @@
 import React,{ useState,useEffect} from 'react'
-
+import { useNavigate } from 'react-router-dom'
 import '../style/pages/FormEducator.scss'
+import { set,ref } from 'firebase/database'
+import Logo from  '../assets/images/Logo-removebg-preview.png'
 
-import { auth } from '../services/firebase'
+import { auth,database } from '../services/firebase'
 import axios from 'axios'
+
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
 
 export function FormEducator() {
 
     const [allStatesArr,setAllStatesArr] = useState<any>([])
-
     const [previewUser,setPreviweUser] = useState<any>()
 
     const [collectionsStates,setCollectionsStates] = useState<Array<''>>([])
@@ -18,6 +21,7 @@ export function FormEducator() {
     const subjects = ['Educação Física','Português','História','Geografia','Matemática','Física','Química','Inglês','Espanhol','Biologia']
     const allDDDinBrazil = [11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,63,64,65,66,67,68,69,71,73,74,75,77,79,81,82,83,84,85,86,87,88,89,91,92,93,94,95,96,97,98,99]
 
+    const[id,setId] = useState<any>()
     const [name,setName] = useState<any>()
     const [birthDay,setBirthDay] = useState<string>('')
     const [numberPhone,setNumberPhone] = useState<string>('')
@@ -33,6 +37,7 @@ export function FormEducator() {
 
     const[situation,setSituation] = useState<boolean>(false)
 
+    const navigate = useNavigate()
 
     const wrongStyle = '.1rem solid red'
     const rightStyle = '1.rem solid green'
@@ -48,6 +53,7 @@ export function FormEducator() {
 
         setName(user?.displayName)
         setPhoto(user?.photoURL)
+        setId(user?.uid)
 
         axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then((response)=>{
             const states = response.data
@@ -62,6 +68,22 @@ export function FormEducator() {
 
     const handlebirthDay = (e:any)=>{
         const element = e.target
+        const birthDayText = element.value
+        const yearText =birthDayText[0]+birthDayText[1]+birthDayText[2]+birthDayText[3]
+        const yearNum = parseInt(yearText)
+
+        const date = new Date()
+        const acctually = date.getFullYear()
+        
+        const age = acctually - yearNum
+        if(age<18 || age>120 ) {
+            setSituation(false)
+            return false
+        }
+        else {
+            setSituation(true)
+            setBirthDay(birthDayText)
+        }
     }
 
     const handleNumber = (e:any)=>{
@@ -97,7 +119,8 @@ export function FormEducator() {
     }
     
     const handleSubject = (e:any) =>{
-
+        setSubject(e.target.value)
+        setSituation(true)
     }
     
     const handleStartHour = (e:any)=>{
@@ -139,9 +162,52 @@ export function FormEducator() {
         }
     }
     
+
+    const handleSubmit = (e:any) =>{
+        e.preventDefault()
+
+        const finalUser = {
+            name:name,
+            birthDay:birthDay,
+            id:id,
+            photo:photo,
+            numberPhone:numberPhone,
+            state:state,
+            city:city,
+            bio:bio,
+            subject:subject,
+            price:price,
+            startHour:startHour,
+            endHour:endHour,
+            daysAvailable:daysAvailable
+        }
+
+        if(situation === false) {
+            return false
+        }
+        else {
+            set(ref(database,'educators/'+ finalUser.id),finalUser)
+            navigate('/')
+        }
+    }
     
     const handleDaysAvailable = (e:any) =>{
-
+        const element = e.target
+        if(daysAvailable.length === 0) {
+            setSituation(false)
+        }
+        
+        if(element.className === 'unselect-day') {
+            setDaysAvailable( prevArr => [...prevArr,element.id])
+            element.className = 'select-day'
+            setSituation(true)
+        }
+        else {
+            element.className = 'unselect-day'
+            const positon = daysAvailable.indexOf(element.id)
+            daysAvailable.splice(positon,1)
+            setSituation(true)
+        }
     }
 
     function selectedCities(e:any) {
@@ -168,14 +234,18 @@ export function FormEducator() {
         <div id="FormEducator">
             <header>
                 <div className="header-form-content">
+                    <div className="header-icons">
+                        <p><HiOutlineArrowNarrowLeft/></p>
+                        <img src={Logo} alt="" />
+                    </div>
                     <div className="title-content">
-                        <h1>Excelente que você deseja se tornar um <span>Educator</span></h1>
+                        <h1>Excelente que você deseja<br/> se tornar um Educator</h1>
                         <p>O primeiro passo é determinar de preencher o formulário </p>
                     </div>
                 </div>
             </header>
             <main>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div className="form-content">
                         <div className="informations-block">
                             <h1>Dados Pessoais</h1>
@@ -187,7 +257,7 @@ export function FormEducator() {
                             </div>
                             <div className="individual-question-content">
                                 <label>Data de Nascimento</label>
-                                <input type="date" />
+                                <input type="date" onChange={handlebirthDay} />
                             </div>
                             <div className="individual-question-content">
                                 <label htmlFor="">Foto</label>
@@ -195,7 +265,7 @@ export function FormEducator() {
                             </div>
                             <div className="individual-question-content">
                                 <label htmlFor="">Número de Whatsapp</label>
-                                <input type="number" />
+                                <input type="number" onChange={handleNumber}/>
                             </div>
                             <div className="individual-question-content">
                                 <label>UF</label>
@@ -212,14 +282,14 @@ export function FormEducator() {
                                     <option value="none"> --Selecione sua Cidade-- </option>
                                     {
                                         collectionsCities?.map((value,key)=>{
-                                            return <option key={key} value={value}>{value}</option>
+                                            return <option key={key} onClick={handleCity} value={value}>{value}</option>
                                         })
                                     }
                                 </select>
                             </div>
                             <div className="individual-question-content">
                                 <label>Biografia</label>
-                                <textarea name="" id="" cols={40} rows={30} placeholder='Faça um pequena descrição sobre sua experiência profissional e acadêmica,dentro de um limite de 200 letras'></textarea>
+                                <textarea name="" id="" cols={40} rows={30} onChange={handleBio} placeholder='Faça um pequena descrição sobre sua experiência profissional e acadêmica,dentro de um limite de 200 letras'></textarea>
                             </div>
                         </div>
                         <div className="informations-block">
@@ -228,35 +298,44 @@ export function FormEducator() {
                                 <label>Matéria</label>
                                 <select>
                                     <option value="none"> --Selecione sua matéria-- </option>
-                                    {subjects.map((value,key)=>{return <option key={key}>{value}</option>})}
+                                    {subjects.map((value,key)=>{return <option onClick={handleSubject} key={key}>{value}</option>})}
                                 </select>
                             </div>
+                            <div className="individual-question-content">
+                                <label htmlFor="">Preço da Aula</label>
+                                <input type="number" onChange={handlePrice}/>
+                            </div>
                         </div>
-                        <div className="individual-question-content">
-                            <label htmlFor="">Preço da Aula</label>
-                            <input type="number" />
-                        </div>
+                       
                         <div className="informations-block">
                             <h1>Sua Grade de Hóraios</h1>
                             <div className="individual-question-content">
                                 <label htmlFor="">Estou dísponível</label>
                                 <div className="hours-informations">
                                     <p>Das</p>
-                                    <input type="number" />
+                                    <input type="number" onChange={handleStartHour}/>
                                     <p>Até</p>
-                                    <input type="number" />
+                                    <input type="number"onChange={handleEndHour} />
                                 </div>
                             </div>
                             <div className="individual-question-content">
                                 <label>Estou disponível no dias</label>
                                 <div className="days-of-week">
-                                    {daysOfWeek.map((value,key)=>{return <button key={key} className='unselect-day'>{value}</button>})}
+                                    {daysOfWeek.map((value,key)=>{
+                                        return <button 
+                                        key={key} 
+                                        id={`${key}`}
+                                        type='button'
+                                        onClick={handleDaysAvailable}
+                                        className='unselect-day'>
+                                            {value}
+                                        </button>})}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="button-content">
+                        <div className="button-content">
                         <button type='submit'>Me Tornar um Educador</button>
+                        </div>
                     </div>
                 </form>
 

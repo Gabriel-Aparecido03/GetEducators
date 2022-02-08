@@ -29,7 +29,7 @@ export function LandingPage() {
             </div>
             <div className="buttons-content">
                 <div className="student-content">
-                    <button><p>Achar um Educador</p></button>
+                    <button onClick={()=>{navigate('/view/educators')}}><p>Achar um Educador</p></button>
                 </div>
                 <div className="educator-content">
                     <button onClick={()=>{navigate('/educator')}}><p>Me tornar um Educador</p></button>

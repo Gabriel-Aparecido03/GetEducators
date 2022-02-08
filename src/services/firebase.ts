@@ -1,4 +1,5 @@
 import { GoogleAuthProvider,getAuth, FacebookAuthProvider } from "firebase/auth";
+import { getDatabase } from 'firebase/database'
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -15,4 +16,6 @@ const providerGoogle = new GoogleAuthProvider()
 const providerFacebook = new FacebookAuthProvider()
 const auth = getAuth()
 
-export { providerGoogle,providerFacebook,auth } 
+const database = getDatabase(app) 
+
+export { providerGoogle,providerFacebook,auth,database } 
