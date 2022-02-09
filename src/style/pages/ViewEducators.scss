@@ -1,0 +1,62 @@
+.header-view-educators {
+    background-color: #11999E;
+    display: block;
+
+    .logo-header-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .phrase-content {
+        display: flex;
+        h1 {
+            color: #fff;
+            
+            text-align: center;
+            justify-content: center;
+            
+            width: 100%;
+
+            margin-bottom: 5%;
+        }   
+    }
+}
+
+.principal-content {
+    display: block;
+
+    .educator-container {
+        border-radius: .4rem;
+        border: 1px solid black;
+        width: 50%;
+        justify-content: center;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-top: 5%;
+
+        padding: 2%;
+        
+        .perfil-content {
+            display: flex;
+            .image-content {
+                img {
+                    border-radius: 50rem;
+                }
+            }
+
+            .name-content {
+                text-align: center;
+                
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-content {
+                display: grid;
+            }
+        }
+    }
+}

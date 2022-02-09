@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../style/pages/ViewEducators.scss'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
-import Logo from '../assets/images/Logo 1.svg'
+import Logo from '../assets/images/Logo-removebg-preview.png'
 import { database } from '../services/firebase'
 import { ref,child,get, onValue } from 'firebase/database'
 
@@ -32,8 +32,8 @@ export function ViewEducators() {
         <div id="ViewEducators">
             <header className='header-view-educators'>
                 <div className="logo-header-content">
+                    <p onClick={()=>{navigate('/')}}><HiOutlineArrowNarrowLeft/></p>
                     <img src={Logo} alt="logo do Educators" />
-                    <p><HiOutlineArrowNarrowLeft/></p>
                 </div>
                 <div className="phrase-content">
                     <h1>Aqui estão os Educadores disponíveis.</h1>
@@ -41,27 +41,13 @@ export function ViewEducators() {
             </header>   
             <main>
                 <div className="principal-content">
-                    <div className="search-bar">
-                        <div className="search-box">
-                            <p>Matéria</p>
-                            <select name="" id=""></select>
-                        </div>
-                        <div className="search-box">
-                            <p>Estado</p>
-                            <select name="" id=""></select>
-                        </div>
-                        <div className="search-box">
-                            <p>Cidade</p>
-                            <select name="" id=""></select>
-                        </div>
-                    </div>
                     <div className="educators-content">
                       {ArrayEducators.map((value,key)=>{ 
                        return(
                         <div className="educator-container" key={key}>
                         <div className="perfil-content">
                             <div className="image-content">
-                                <img src={'https://lh3.googleusercontent.com/a/AATXAJz_fK0qfxZUQhKV-HONCUdGtqInKzKjmpKJ-HjN=s96-c'} alt="foto de perfil do educador" />
+                                <img src={`${ArrayEducators[key].photo}`}  referrerPolicy={"origin"} alt="foto de perfil do educador" />
                             </div>
                             <div className="name-content">
                                 <h1>{ArrayEducators[key].name}</h1>
