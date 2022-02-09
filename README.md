@@ -8,7 +8,7 @@
 #
 # Sobre
 
-    Educators é uma plataforma onde professores poderão se cadastrar para dar aulas online ou presenciais,assim podendo aumentar cada vez mais o nível da educação brasileira.Nesta plataforma qualquer professor pode se cadastrar e de qualquer lugar do Brasil.
+Educators é uma plataforma onde professores poderão se cadastrar para dar aulas online ou presenciais,assim podendo aumentar cada vez mais o nível da educação brasileira.Nesta plataforma qualquer professor pode se cadastrar e de qualquer lugar do Brasil.
 
 # Tecnologias usadas
 
@@ -41,26 +41,26 @@
 # O que está sendo feito de novo?
 
     ### 🚧 next steps 🚧 ###
-    🔲 - Refatoração do código.
-        
-    🔲 - Adicionar página para o professor acessar seu perfil
-    
-    🔲 - Adicionar página de estudantes
-    
-    🔲 - Salvar/dar like nos professores
-    
-    🔲 - Adicionar quantidades de aulas dadas por cada professor
-    
-    🔲 - Adicionar outras formas de login(Twitter,Linkedin,E-mail)
+🔲 - Refatoração do código.
 
-    🔲 - Aprimorar a responsividade da aplicação para vários tipos de tela
+🔲 - Adicionar página para o professor acessar seu perfil
+
+🔲 - Adicionar página de estudantes
+
+🔲 - Salvar/dar like nos professores
+
+🔲 - Adicionar quantidades de aulas dadas por cada professor
+
+🔲 - Adicionar outras formas de login(Twitter,Linkedin,E-mail)
+
+🔲 - Aprimorar a responsividade da aplicação para vários tipos de tela
 
 
 # Quais foram as dificultades superadas?
 
-    - Trabalhar com responsividades.
-    - Trabalhar com códigos mais inteligentes(diminuir a quantidade de if,evitar repetições).
-    - Aprender a usar o Firebase.
+- Trabalhar com responsividades.
+- Trabalhar com códigos mais inteligentes(diminuir a quantidade de if,evitar repetições).
+- Aprender a usar o Firebase.
 
 
 
