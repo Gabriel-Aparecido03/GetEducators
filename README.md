@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+<p align="center"> 
+    <p> ----EM CONSTRUÇÃO---- </p>
+    <img src="./src/assets/images/Desktop - 1.svg"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+#
+# Sobre
 
-### `yarn start`
+    Educators é uma plataforma onde professores poderão se cadastrar para dar aulas online ou presenciais,assim podendo aumentar cada vez mais o nível da educação brasileira.Nesta plataforma qualquer professor pode se cadastrar e de qualquer lugar do Brasil.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Tecnologias usadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+<div style="display:flex!important;">
+  <a href="https://firebase.google.com/?hl=pt"><img align="center" alt="Hideki-React" height="30" width="34" src="https://img.icons8.com/color/480/firebase.png"> - Firebase</a><br/>
+  <a href="https://reactjs.org/"><img align="center" alt="Hideki-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"> - React</a><br/>
+  <a href="https://www.typescriptlang.org/"><img align="center" alt="Hideki-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"> - Typescript</a><br/>
+  <a href="https://reactjs.org/"><img align="center" alt="Hideki-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"> - HTML</a><br/>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+    #Clone o repositório
+    $ git clone https://github.com/Gabriel-Aparecido03/GetEducators.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    #Entre no repositório
+    $ cd GetEducators
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    #Instale as dependências
+    $ yarn install
 
-### `yarn eject`
+    #Execute a aplicação
+    $ yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# O que está sendo feito de novo?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ### 🚧 next steps 🚧 ###
+    🔲 - Refatoração do código.
+        
+    🔲 - Adicionar página para o professor acessar seu perfil
+    
+    🔲 - Adicionar página de estudantes
+    
+    🔲 - Salvar/dar like nos professores
+    
+    🔲 - Adicionar quantidades de aulas dadas por cada professor
+    
+    🔲 - Adicionar outras formas de login(Twitter,Linkedin,E-mail)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    🔲 - Aprimorar a responsividade da aplicação para vários tipos de tela
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Quais foram as dificultades superadas?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    - Trabalhar com responsividades.
+    - Trabalhar com códigos mais inteligentes(diminuir a quantidade de if,evitar repetições).
+    - Aprender a usar o Firebase.
+
+
+
+<p align="center">Made with 🧡 by Gabriel Aparecido da Silva</p>
